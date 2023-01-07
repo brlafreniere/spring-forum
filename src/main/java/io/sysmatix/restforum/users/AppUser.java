@@ -1,0 +1,26 @@
+package io.sysmatix.restforum.users;
+
+import jakarta.persistence.*;
+
+@Entity
+public class AppUser {
+    private @Id @GeneratedValue Long id;
+    private @Column(unique = true) String emailAddress;
+    private String password;
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
