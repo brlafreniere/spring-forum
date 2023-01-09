@@ -1,4 +1,4 @@
-package io.sysmatix.restforum.users;
+package io.sysmatix.restforum.app_users;
 
 import jakarta.persistence.*;
 
@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class AppUser {
     private @Id @GeneratedValue Long id;
     private @Column(unique = true) String emailAddress;
-    private String password;
+    private String hashedPassword;
 
     public String getEmailAddress() {
         return emailAddress;
@@ -16,11 +16,6 @@ public class AppUser {
         this.emailAddress = emailAddress;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public String getHashedPassword() { return hashedPassword; }
+    public void setHashedPassword(String password) { this.hashedPassword = password; }
 }

@@ -1,4 +1,4 @@
-package io.sysmatix.restforum.users;
+package io.sysmatix.restforum.app_users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -18,7 +18,7 @@ public class AppUserDetailsService implements UserDetailsService {
         }
         UserDetails user = User
             .withUsername(appUser.getEmailAddress())
-            .password(appUser.getPassword())
+            .password(appUser.getHashedPassword())
             .authorities("USER")
             .build();
         return user;

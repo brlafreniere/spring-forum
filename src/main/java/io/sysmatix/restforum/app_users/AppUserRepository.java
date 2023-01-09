@@ -1,4 +1,4 @@
-package io.sysmatix.restforum.users;
+package io.sysmatix.restforum.app_users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
